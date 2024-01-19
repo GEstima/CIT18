@@ -1,41 +1,45 @@
-body {
-    display: flex;
-    font-family: 'Arial', sans-serif;
-}
-
-.left-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.left-nav h1 {
-    margin-bottom: 20px;
-}
-
-.left-nav ul {
-    list-style: none;
+body, h1, h2, h3, p, ul {
+    margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #E0EFEA; 
+    color: #445F3B; /* Main text color */
+}
+
+h1, h2, h3 {
+    color: #677C77; /* Heading color */
+}
+
+.left-nav {
+    background-color: #564734; /* Dark background color for navigation bar */
+}
+
+.left-nav h1 {
+    color: #8EA076; /* Navigation bar title color */
+}
+
 .left-nav a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    color: #E0EFEA; /* Navigation links color */
 }
 
 .left-nav a:hover {
-    background-color: #555;
+    color: #445F3B; /* Navigation links color on hover */
 }
 
 .content {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
-    flex-grow: 1;
+}
+
+/* Dark mode styles */
+.dark-mode body {
+    background-color: #445F3B; /* Dark background color */
+    color: #E0EFEA; /* Dark mode text color */
 }
 
 /* Additional styles for animation */
@@ -44,14 +48,14 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
-/* Additional styles for toast message */
+/* Toast message */
 #toast {
     display: none;
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #333;
-    color: #fff;
+    background-color: #677C77; /* Toast background color */
+    color: #E0EFEA; /* Toast text color */
     padding: 15px;
     border-radius: 5px;
     animation: fadeIn 0.5s ease-in-out;
@@ -60,4 +64,38 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* Style for sections */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Colors for sections */
+section:nth-child(even) {
+    background-color: #8EA076; /* Alternate background color */
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #677C77; /* Section title color */
+}
+
+section p {
+    font-size: 1.1em;
+    line-height: 1.4;
+    color: #445F3B; /* Section text color */
+}
+
+/* Style for links */
+a {
+    color: #677C77; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8EA076; 
 }
