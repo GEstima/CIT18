@@ -17,28 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('dark-mode', isDarkModeEnabled ? 'enabled' : 'disabled');
     });
 
-    // Additional Interactive Elements
-    document.querySelectorAll('.left-nav a').forEach(function (navLink) {
+    // Show/hide sections on navigation click
+    const sections = document.querySelectorAll('.content section');
+
+    document.querySelectorAll('.left-nav a').forEach(function (navLink, index) {
         navLink.addEventListener('click', function (event) {
             event.preventDefault();
 
-            // Add animation to the clicked navigation item
-            navLink.classList.add('nav-item-clicked');
-
-            // Display toast message
-            const toast = document.getElementById('toast');
-            toast.textContent = `${navLink.textContent} section opened!`;
-            toast.style.display = 'block';
-
-            // Remove animation class after animation completes
-            setTimeout(() => {
-                navLink.classList.remove('nav-item-clicked');
-            }, 500);
-
-            // Hide toast message after a brief period
-            setTimeout(() => {
-                toast.style.display = 'none';
-            }, 3000);
+            // Toggle visibility of sections
+            sections.forEach(function (section, i) {
+                section.style.display = i === index ? 'block' : 'none';
+            });
 
             // Scroll to the target section
             const targetId = navLink.getAttribute('href').substring(1);
