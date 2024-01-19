@@ -1,18 +1,17 @@
 body {
     display: flex;
-    font-family: 'Arial', sans-serif';
-}
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
+}
 .left-nav {
     position:fixed;
     top: 0;
     left: 0;
     width: 300px;
     height: 100vh;
-    background-color: #;
+    background-color: #29354B;
     color: #fff;
     padding: 20px;
-
 }
 
 .left-nav h1 {
@@ -98,7 +97,54 @@ section p {
     border: 4px solid #4C8891;
     border-radius: 50%;
     padding: 5px;
-    width: 200pt;
-    height: 200pt;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
 }
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #29354B;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #4C8891;
+}
+
+/* Add a dark mode style for the scroll-to-top button */
+.dark-mode #scrollToTopBtn {
+    background-color: #677C77;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        margin-left: 20px;
+        padding: 20px;
+    }
+
+    .profile-picture img {
+        width: 100%;
+        height: auto;
+    }
+}
+

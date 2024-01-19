@@ -3,6 +3,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const body = document.body;
     const darkModeToggle = document.getElementById('darkModeToggle');
 
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = 'block';
+        } else {
+            scrollToTopBtn.style.display = 'none';
+        }
+    });
+
+    // Scroll to top on button click
+    scrollToTopBtn.addEventListener('click', function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+    
     // Check dark mode preference in local storage
     if (localStorage.getItem('dark-mode') === 'enabled') {
         body.classList.add('dark-mode');
